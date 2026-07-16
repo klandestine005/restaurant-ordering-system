@@ -1,0 +1,740 @@
+/* ==========================================================================
+   RESET & BASE STYLES
+   ========================================================================== */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #e5e5e5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100%;
+}
+
+/* ==========================================================================
+   CONTAINER & UTILITIES
+   ========================================================================== */
+.login-container {
+    width: 100%;
+    max-width: 480px;
+    padding: 20px;
+    text-align: center;
+}
+
+.logo-box {
+    margin-bottom: 25px;
+}
+
+.logo-box img {
+    width: 70px;
+    height: auto;
+}
+
+.title {
+    font-size: 26px;
+    font-weight: bold;
+    color: #000;
+    margin: 0 0 5px 0;
+}
+
+.subtitle {
+    font-size: 14px;
+    color: #7f8c8d;
+    margin: 0 0 25px 0;
+}
+
+/* ==========================================================================
+   CARD & FORM ELEMENTS
+   ========================================================================== */
+.card {
+    background: #ffffff;
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    text-align: left;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    font-size: 14px;
+    color: #333;
+    margin-bottom: 8px;
+    font-weight: 500;
+}
+
+.form-control {
+    width: 100%;
+    padding: 12px 16px;
+    border: 1px solid #dcdde1;
+    border-radius: 30px;
+    font-size: 15px;
+    outline: none;
+    transition: border-color 0.2s, box-shadow 0.2s;
+    background-color: #ffffff;
+}
+
+.form-control:focus {
+    border-color: #ff893b;
+    box-shadow: 0 0 0 3px rgba(255, 137, 59, 0.1);
+}
+
+/* Khusus untuk dropdown select agar panah bawaan hilang dan rapi */
+select.form-control {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background-image: url("data:image/svg+xml;utf8,<svg fill='%23333' height='24' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/><path d='M0 0h24v24H0z' fill='none'/></svg>");
+    background-repeat: no-repeat;
+    background-position: right 15px center;
+    cursor: pointer;
+}
+
+/* ==========================================================================
+   BUTTONS & LINKS
+   ========================================================================== */
+.btn-orange {
+    width: 100%;
+    padding: 14px;
+    background-color: #ff893b;
+    border: none;
+    border-radius: 30px;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: background-color 0.2s, transform 0.1s;
+}
+
+.btn-orange:hover {
+    background-color: #e67327;
+}
+
+.btn-orange:active {
+    transform: scale(0.98);
+}
+
+.switch-link {
+    display: block;
+    text-align: center;
+    margin-top: 20px;
+    font-size: 13px;
+    color: #ff893b;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.2s;
+}
+
+.switch-link:hover {
+    color: #e67327;
+    text-decoration: underline;
+}
+
+/* ==========================================================================
+   ERROR MESSAGE
+   ========================================================================== */
+.error-msg {
+    background-color: #fde8e8;
+    color: #e74c3c;
+    font-size: 13px;
+    padding: 10px 15px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    text-align: center;
+    border: 1px solid #f8b9b9;
+}
+
+/* ==========================================================================
+   LAYOUT UTAMA (SIDEBAR & MAIN CONTENT)
+   ========================================================================== */
+body {
+    background-color: #f3f3f3;
+    display: flex;
+    align-items: stretch;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.sidebar {
+    width: 90px;
+    background-color: #ffffff;
+    border-right: 1px solid #eaeaea;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding: 25px 0;
+    z-index: 10;
+}
+
+.sidebar-top, .sidebar-bottom {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+.brand-logo img {
+    width: 42px;
+    height: auto;
+    margin-bottom: 45px;
+}
+
+.nav-menu {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.nav-item {
+    color: #a4b0be;
+    padding: 12px;
+    border-radius: 12px;
+    transition: 0.2s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.nav-item:hover, .nav-item.active {
+    color: #ff893b;
+    background-color: #fff2e9;
+}
+
+.sidebar-bottom {
+    gap: 30px;
+}
+
+.user-avatar-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+}
+
+.avatar-info {
+    display: none; /* Menyembunyikan teks detail nama di dalam bar menu sidebar sempit */
+}
+
+.logout-btn {
+    color: #a4b0be;
+    transition: color 0.2s;
+}
+
+.logout-btn:hover {
+    color: #e74c3c;
+}
+
+.main-content {
+    flex: 1;
+    padding: 30px 40px;
+    overflow-y: auto;
+}
+
+/* ==========================================================================
+   KOMPONEN AVATAR & BANNER
+   ========================================================================== */
+.avatar-circle {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    color: white;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+}
+
+.small-avatar { background-color: #d81b60; width: 36px; height: 36px; font-size: 11px; }
+.pink-avatar { background-color: #d81b60; font-size: 15px; }
+
+.banner-container {
+    width: 100%;
+    border-radius: 20px;
+    overflow: hidden;
+    margin-bottom: 25px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.02);
+}
+
+.promo-banner {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+}
+
+/* ==========================================================================
+   TABLE INFO BAR
+   ========================================================================== */
+.table-bar {
+    background: #ffffff;
+    border-radius: 20px;
+    padding: 20px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.02);
+    margin-bottom: 35px;
+    border: 1px solid #ebebeb;
+}
+
+.table-info-left {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.table-text h2 {
+    font-size: 16px;
+    margin: 0;
+    color: #2c3e50;
+}
+
+.table-text p {
+    font-size: 14px;
+    color: #7f8c8d;
+    margin: 2px 0 0 0;
+}
+
+.btn-add-order {
+    background-color: #ff893b;
+    color: white;
+    padding: 12px 28px;
+    border-radius: 25px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 15px;
+    transition: background-color 0.2s;
+}
+
+.btn-add-order:hover {
+    background-color: #e67327;
+}
+
+/* ==========================================================================
+   ORDERS GRID & CARDS
+   ========================================================================== */
+.section-title {
+    font-size: 24px;
+    font-weight: bold;
+    color: #000;
+    margin-bottom: 20px;
+}
+
+.orders-grid {
+    display: flex;
+    gap: 25px;
+    flex-wrap: wrap;
+}
+
+.order-card {
+    background: #ffffff;
+    border-radius: 20px;
+    padding: 25px;
+    width: calc(50% - 13px);
+    min-width: 320px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.02);
+    border: 1px solid #ebebeb;
+}
+
+.order-card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    border-bottom: 1px solid #f5f5f5;
+    padding-bottom: 15px;
+    margin-bottom: 15px;
+}
+
+.order-meta p {
+    font-size: 14px;
+    margin: 0;
+    color: #333;
+}
+
+.order-meta .order-date {
+    font-size: 13px;
+    color: #7f8c8d;
+    margin-top: 4px;
+}
+
+.status-badge {
+    font-size: 12px;
+    font-weight: 600;
+    padding: 6px 20px;
+    border-radius: 15px;
+}
+
+.status-done {
+    border: 1px solid #ff893b;
+    color: #ff893b;
+    background-color: #fffaf7;
+}
+
+.status-progress {
+    border: 1px solid #d81b60;
+    color: #d81b60;
+    background-color: #fff0f5;
+}
+
+.order-items-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.order-items-list li {
+    display: flex;
+    justify-content: space-between;
+    font-size: 15px;
+    color: #2c3e50;
+}
+
+.item-name {
+    font-weight: 500;
+}
+
+.item-qty {
+    color: #2c3e50;
+    font-weight: 500;
+}
+
+.no-data {
+    color: #7f8c8d;
+    font-style: italic;
+}
+
+body {
+    background-color: #f8f9fa;
+}
+
+body {
+    background-color: #f8f9fa;
+}
+
+/* ==========================================================================
+   LAYOUT KOLOM TENGAH (KATALOG)
+   ========================================================================== */
+.menu-main-content {
+    flex: 1;
+    padding: 30px 40px;
+    overflow-y: auto;
+    background-color: #f5f5f5;
+}
+
+.search-box-container {
+    position: relative;
+    width: 100%;
+    margin-bottom: 30px;
+}
+
+.search-icon {
+    position: absolute;
+    left: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+}
+
+#search-input {
+    width: 100%;
+    padding: 16px 16px 16px 55px;
+    border: none;
+    border-radius: 30px;
+    background-color: #ffffff;
+    font-size: 15px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.02);
+    outline: none;
+}
+
+/* Kategori Kapsul Horisontal */
+.categories-container {
+    display: flex;
+    gap: 15px;            /* Jarak antar card */
+    margin-bottom: 35px;
+    width: 100%;          /* Memastikan kontainer utama mengambil lebar penuh */
+    justify-content: space-between;
+}
+
+.category-card {
+    background: #ffffff;
+    border: 1px solid transparent;
+    border-radius: 18px;
+    padding: 15px 0;      /* Mengubah padding horizontal menjadi 0 agar text tetap center saat melar */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+    flex: 1; 
+    box-shadow: 0 4px 10px rgba(0,0,0,0.02);
+    transition: all 0.2s ease;
+}
+
+.category-card .cat-icon-box {
+    font-size: 22px;
+    color: #ff893b;
+}
+
+.category-card span {
+    font-size: 14px;
+    font-weight: 600;
+    color: #2c3e50;
+}
+
+.category-card.active {
+    background-color: #fff2e9;
+    border: 1.5px solid #ff893b;
+}
+
+.category-card:hover {
+    border-color: #ff893b;
+    background-color: #fffaf7;
+}
+
+.menu-section-title {
+    font-size: 22px;
+    font-weight: bold;
+    margin-bottom: 25px;
+}
+
+/* Grid Katalog Menu */
+.menu-products-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 25px;
+}
+
+.product-item-card {
+    background: #ffffff;
+    border-radius: 22px;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.02);
+}
+
+.product-img-wrapper {
+    width: 130px;
+    height: 130px;
+    margin: 0 auto 15px auto;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.product-img-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.product-details h3 {
+    font-size: 15px;
+    font-weight: bold;
+    color: #2c3e50;
+    margin: 0 0 8px 0;
+    text-align: left;
+}
+
+.product-price {
+    font-size: 14px;
+    color: #7f8c8d;
+    text-align: left;
+    margin-bottom: 15px;
+}
+
+.action-control-box {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.btn-add-initial {
+    background: #ff893b;
+    border: none;
+    color: white;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    font-size: 20px;
+    font-weight: bold;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* ==========================================================================
+   PANEL KANAN (CART & SUMMARY)
+   ========================================================================== */
+.cart-panel {
+    width: 380px;
+    background: #ffffff;
+    border-left: 1px solid #eaeaea;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+}
+
+.cart-title {
+    font-size: 22px;
+    font-weight: bold;
+    margin-bottom: 25px;
+}
+
+.cart-items-wrapper {
+    flex: 1;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.empty-cart-text {
+    color: #a4b0be;
+    text-align: center;
+    font-style: italic;
+    margin-top: 40px;
+}
+
+.cart-item-row {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    background: #fdfdfd;
+    padding: 10px;
+    border-radius: 15px;
+}
+
+.cart-item-row img {
+    width: 60px;
+    height: 60px;
+    border-radius: 12px;
+    object-fit: cover;
+}
+
+.cart-item-info {
+    flex: 1;
+}
+
+.cart-item-info h4 {
+    font-size: 14px;
+    margin: 0 0 4px 0;
+}
+
+.cart-item-info p {
+    font-size: 13px;
+    color: #7f8c8d;
+    margin: 0;
+}
+
+/* Kontrol Konter + / - */
+.qty-counter-control {
+    display: flex;
+    align-items: center;
+    background: #ff893b;
+    border-radius: 20px;
+    padding: 4px;
+    color: white;
+    gap: 10px;
+}
+
+.qty-counter-control button {
+    background: transparent;
+    border: none;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    width: 28px;
+    height: 28px;
+}
+
+.qty-counter-control span {
+    font-weight: bold;
+    min-width: 15px;
+    text-align: center;
+}
+
+.inline-control {
+    padding: 2px 6px;
+}
+
+/* Rincian Total Ringkasan Belanja */
+.cart-summary-section {
+    border-top: 1px dashed #dcdde1;
+    padding-top: 20px;
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.summary-row {
+    display: flex;
+    justify-content: space-between;
+    font-size: 14px;
+    color: #7f8c8d;
+}
+
+.total-row {
+    font-size: 17px;
+    font-weight: bold;
+    color: #000000;
+    margin-top: 5px;
+}
+
+/* Metode Pembayaran Grid */
+.payment-options-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+    margin: 25px 0;
+}
+
+.pay-method-btn {
+    border: 1px solid #dcdde1;
+    background: #ffffff;
+    padding: 12px;
+    border-radius: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.pay-method-btn.active {
+    border-color: #ff893b;
+    background-color: #fff2e9;
+    color: #ff893b;
+}
+
+.btn-confirm-order-submit {
+    width: 100%;
+    background-color: #ff893b;
+    color: white;
+    border: none;
+    padding: 16px;
+    border-radius: 30px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.btn-confirm-order-submit:hover {
+    background-color: #e67327;
+}

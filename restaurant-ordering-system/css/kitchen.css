@@ -1,0 +1,217 @@
+/* ==========================================================================
+   MODUL ANTRIAN KARTU DAPUR (DASHBOARD KITCHEN)
+   ========================================================================== */
+.kitchen-order-card {
+    background: #ffffff;
+    border-radius: 20px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.02);
+    border: 1px solid #ebebeb;
+    width: calc(50% - 13px);
+    min-width: 320px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    overflow: hidden;
+}
+
+.kitchen-card-header {
+    padding: 22px 25px 15px 25px;
+    border-bottom: 1px solid #f5f5f5;
+}
+
+.kitchen-card-header p {
+    margin: 0;
+    font-size: 14px;
+    color: #2c3e50;
+}
+
+.kitchen-card-header .order-date {
+    font-size: 13px;
+    color: #7f8c8d;
+    margin-top: 3px;
+}
+
+.kitchen-order-card .order-table-meta {
+    margin-top: 8px;
+    font-size: 13.5px;
+    color: #ff893b;
+}
+
+.kitchen-items-list {
+    list-style: none;
+    padding: 20px 25px;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    flex: 1;
+}
+
+.kitchen-items-list li {
+    display: flex;
+    justify-content: space-between;
+    font-size: 15px;
+    color: #333;
+}
+
+.kitchen-items-list .item-name {
+    font-weight: 500;
+}
+
+.kitchen-items-list .item-qty {
+    font-weight: 600;
+}
+
+.kitchen-card-footer {
+    background-color: #fcfcfc;
+    padding: 15px 25px 22px 25px;
+    border-top: 1px solid #f8f8f8;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.btn-kitchen-done {
+    background-color: #ff893b;
+    color: #ffffff;
+    border: none;
+    padding: 10px 42px;
+    border-radius: 20px;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 2px 8px rgba(255,137,59,0.2);
+    transition: background-color 0.2s;
+}
+
+.btn-kitchen-done:hover {
+    background-color: #e67327;
+}
+
+.no-data-msg, .empty-table-msg {
+    color: #a4b0be;
+    font-style: italic;
+    padding: 20px;
+}
+
+/* ==========================================================================
+   PERBAIKAN STYLE SEARCH BOX UTK EMPLOYEES (FULL WIDTH)
+   ========================================================================== */
+.main-content .search-box-container {
+    position: relative;
+    width: 100%;             /* Mengambil lebar penuh kontainer */
+    max-width: none;         /* Menghapus batasan lebar maksimal sebelumnya */
+    margin-bottom: 35px;
+    display: block;
+}
+
+.main-content .search-box-container input[type="text"] {
+    width: 100%;             /* Input teks melar 100% penuh */
+    padding: 16px 16px 16px 55px; /* Menyelaraskan padding dengan gaya halaman menu */
+    border: none;
+    border-radius: 30px;
+    background-color: #ffffff;
+    font-size: 15px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.02);
+    outline: none;
+    box-sizing: border-box;  /* Menjamin padding tidak merusak ukuran elemen */
+}
+
+.main-content .search-box-container input[type="text"]:focus {
+    box-shadow: 0 2px 12px rgba(255, 137, 59, 0.15);
+}
+
+.main-content .search-icon {
+    position: absolute;
+    left: 20px;              /* Disesuaikan posisinya agar presisi dengan padding baru */
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    align-items: center;
+    pointer-events: none;
+}
+
+/* ==========================================================================
+   MODUL TABEL RIWAYAT TRANSAKSI (ORDER HISTORY)
+   ========================================================================== */
+.history-filter-bar {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-bottom: 25px;
+    align-items: flex-start;
+}
+
+.history-filter-bar label {
+    font-size: 14px;
+    font-weight: 500;
+    color: #333;
+}
+
+.date-input-wrapper input[type="date"] {
+    padding: 10px 18px;
+    border: 1px solid #dcdde1;
+    border-radius: 12px;
+    outline: none;
+    font-size: 14px;
+    color: #2c3e50;
+    background-color: #ffffff;
+}
+
+.table-responsive-container {
+    background: #ffffff;
+    border-radius: 20px;
+    border: 1px solid #eaeaea;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.01);
+}
+
+.history-data-table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+    font-size: 14.5px;
+}
+
+.history-data-table th {
+    background-color: #f8f9fa;
+    color: #2c3e50;
+    font-weight: bold;
+    padding: 18px 20px;
+    border-bottom: 1px solid #eaeaea;
+}
+
+.history-data-table td {
+    padding: 16px 20px;
+    color: #2c3e50;
+    border-bottom: 1px solid #f5f5f5;
+    vertical-align: middle;
+}
+
+/* Zebra Striping Baris Alternatif sesuai Skema UI */
+.history-data-table tbody tr:nth-child(even) {
+    background-color: #fff9f5;
+}
+
+.history-data-table .muted-text {
+    color: #7f8c8d;
+}
+
+.history-data-table .menu-cell-ellipsis {
+    max-width: 300px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.detail-link-btn {
+    color: #ff893b;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 13.5px;
+    transition: color 0.2s;
+}
+
+.detail-link-btn:hover {
+    color: #e67327;
+    text-decoration: underline;
+}
