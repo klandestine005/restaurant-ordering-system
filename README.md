@@ -42,28 +42,28 @@ A role-based web application for restaurant order management developed using **H
 ## Screenshots
 
 ### Customer Login
-![alt text](screenshots/image-8.png)
+![alt text](restaurant-ordering-system/screenshots/image-8.png)
 
 ### Employee Login
-![alt text](screenshots/image-9.png)
+![alt text](restaurant-ordering-system/screenshots/image-9.png)
 
 ### Customer Dashboard
-![alt text](screenshots/image-1.png)
+![alt text](restaurant-ordering-system/screenshots/image-1.png)
 
 ### Customer Ordering Page
-![alt text](screenshots/image.png)
+![alt text](restaurant-ordering-system/screenshots/image.png)
 
 ### Kitchen Dashboard
-![alt text](screenshots/image-2.png)
+![alt text](restaurant-ordering-system/screenshots/image-2.png)
 
 ### Kitchen Order History
-![alt text](screenshots/image-7.png)
+![alt text](restaurant-ordering-system/screenshots/image-7.png)
 
 ### Cashier Dashboard
-![alt text](screenshots/image-4.png)
+![alt text](restaurant-ordering-system/screenshots/image-4.png)
 
 ### Cashier Order History
-![alt text](screenshots/image-6.png)
+![alt text](restaurant-ordering-system/screenshots/image-6.png)
 
 ## Database
 
